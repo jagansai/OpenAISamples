@@ -1,0 +1,22 @@
+### Send a chat prompt to the Spring AI app
+
+POST http://localhost:8080/api/chat
+Content-Type: application/json
+
+{
+  "prompt": "Say hello and the current date"
+}
+
+### Example with a different prompt
+
+POST http://localhost:8080/api/chat
+Content-Type: application/json
+
+{
+  "prompt": "Summarize the benefits of Spring AI in one sentence."
+}
+
+### Notes
+# - Start the Spring Boot app first (default port 8080).
+# - In VS Code, install the "REST Client" extension and click "Send Request" above a request to run it.
+# - Response JSON will be of the form: { "content": "..." }
