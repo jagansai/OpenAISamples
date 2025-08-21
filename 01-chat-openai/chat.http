@@ -13,7 +13,17 @@ POST http://localhost:8080/api/chat
 Content-Type: application/json
 
 {
-  "prompt": "Summarize the benefits of Spring AI in one sentence."
+  "systemMessage": "You are a helpful assistant.",
+  "userMessage": "Tell me a joke."
+}
+
+### Send a quiz request to the Spring AI app
+POST http://localhost:8080/api/quiz
+Content-Type: application/json
+
+{
+  "topic": "regex",
+  "count": 5
 }
 
 ### Notes
