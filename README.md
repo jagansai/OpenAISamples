@@ -2,32 +2,18 @@
 
 ## Table of Contents
 
-- [01-chat-openai](01-chat-openai/)
+- [01-chat-openai](01-chat-openai/) — simple Chat with OpenAI via Spring AI
+- [02-rag-loader](02-rag-loader/) — RAG demo with in-memory vector store and markdown->HTML chat endpoint
 
-## 01-chat-openai
+## Notes
 
-A Spring Boot sample demonstrating the Spring AI chat client.
+- Start a module by changing into its directory and running the provided helper scripts (if present) or via Maven.
+- Example (PowerShell):
 
-Example request / response (use JSON):
-
-Request:
-
-```json
-{
-  "prompt": "Summarize the benefits of Spring AI in one sentence."
-}
+```powershell
+cd 02-rag-loader
+.\start.ps1
 ```
 
-Response:
+- For API examples see `02-rag-loader/chat.html` and `chat.http` in the project root.
 
-```json
-{
-  "content": "Spring AI enhances application development by providing seamless integration of artificial intelligence capabilities, enabling faster innovation, improved decision-making, and more intelligent automation within Spring-based projects."
-}
-```
-
-Notes:
-
-- Start the Spring Boot app (default port 8080) and send a POST to `/api/chat` with the JSON request above.
-- See `chat.http` in the project root for example VS Code REST Client requests.
- 
