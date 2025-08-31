@@ -4,6 +4,7 @@
 
 - [01-chat-openai](01-chat-openai/) — simple Chat with OpenAI via Spring AI
 - [02-rag-loader](02-rag-loader/) — RAG demo with in-memory vector store and markdown->HTML chat endpoint
+- [03-rag-loader](03-rag-loader/) — RAG demo with upload-on-the-fly for logs and chat UI
 
 ## Notes
 
