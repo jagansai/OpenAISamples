@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.ai.document.Document;
+import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.reader.markdown.MarkdownDocumentReader;
 import org.springframework.ai.reader.markdown.config.MarkdownDocumentReaderConfig;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
+import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
@@ -21,6 +23,11 @@ public class AIConfig {
 
     @Value("classpath:/docs/contact.md")
     private Resource contactDoc;
+
+    @Bean
+    VectorStore vectorStore(EmbeddingModel embeddingModel) {
+        return SimpleVectorStore.builder(embeddingModel).build();
+    }
 
     @Bean
     ApplicationRunner applicationRunner(VectorStore vectorStore) {

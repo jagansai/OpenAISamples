@@ -24,8 +24,10 @@ if ($procs) {
 	Start-Sleep -Seconds 1
 }
 
+
+wsl -e sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'
 Write-Output "Starting application..."
-$proc = Start-Process -FilePath $JavaExe -ArgumentList '-jar', $Jar -RedirectStandardOutput 'logs\\out.log' -RedirectStandardError 'logs\\err.log' -PassThru
+$proc = Start-Process -FilePath $JavaExe -ArgumentList '-Xmx2048M -Xms512M  -jar', $Jar -RedirectStandardOutput 'logs\\out.log' -RedirectStandardError 'logs\\err.log' -PassThru
 # Write-Output "Started PID $($proc.Id)"
 # Start-Sleep -Seconds 2
 
