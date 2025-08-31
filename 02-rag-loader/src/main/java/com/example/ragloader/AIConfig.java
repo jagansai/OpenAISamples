@@ -31,7 +31,7 @@ public class AIConfig {
 
     @Bean
     ApplicationRunner applicationRunner(VectorStore vectorStore) {
-        return args -> {
+        return _ -> {
             loadDocument(vectorStore, contactDoc);
         };
     }

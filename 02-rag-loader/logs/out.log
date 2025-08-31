@@ -8,23 +8,23 @@
 
  :: Spring Boot ::                (v3.5.4)
 
-2025-08-31T08:59:56.098+08:00  INFO 5228 --- [02-rag-loader] [           main] com.example.ragloader.Application        : Starting Application using Java 24.0.2 with PID 5228 (D:\code\java_code\OpenAISamples\02-rag-loader\target\02-rag-loader-0.0.1-SNAPSHOT.jar started by jagan in D:\code\java_code\OpenAISamples\02-rag-loader)
-2025-08-31T08:59:56.103+08:00  INFO 5228 --- [02-rag-loader] [           main] com.example.ragloader.Application        : No active profile set, falling back to 1 default profile: "default"
-2025-08-31T08:59:57.050+08:00  INFO 5228 --- [02-rag-loader] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-08-31T08:59:57.056+08:00  INFO 5228 --- [02-rag-loader] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-08-31T08:59:57.093+08:00  INFO 5228 --- [02-rag-loader] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-2025-08-31T08:59:57.583+08:00  INFO 5228 --- [02-rag-loader] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-08-31T08:59:57.599+08:00  INFO 5228 --- [02-rag-loader] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-31T08:59:57.600+08:00  INFO 5228 --- [02-rag-loader] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-31T08:59:57.629+08:00  INFO 5228 --- [02-rag-loader] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-31T08:59:57.631+08:00  INFO 5228 --- [02-rag-loader] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1455 ms
-2025-08-31T08:59:59.404+08:00  INFO 5228 --- [02-rag-loader] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-08-31T08:59:59.507+08:00  INFO 5228 --- [02-rag-loader] [           main] com.example.ragloader.Application        : Started Application in 3.812 seconds (process running for 4.414)
-2025-08-31T08:59:59.512+08:00  INFO 5228 --- [02-rag-loader] [           main] com.example.ragloader.AIConfig           : Loading document: contact.md
-2025-08-31T09:00:01.151+08:00  INFO 5228 --- [02-rag-loader] [           main] o.s.ai.vectorstore.SimpleVectorStore     : Calling EmbeddingModel for document id = a489a3a2-bb26-4dd4-9981-2352941264ef
-2025-08-31T09:00:02.462+08:00  INFO 5228 --- [02-rag-loader] [           main] o.s.ai.vectorstore.SimpleVectorStore     : Calling EmbeddingModel for document id = 9c75fa2e-60b9-4e0f-94b4-1e351086b9fb
-2025-08-31T09:00:03.508+08:00  INFO 5228 --- [02-rag-loader] [           main] o.s.ai.vectorstore.SimpleVectorStore     : Calling EmbeddingModel for document id = 91304918-6f35-4fc6-99ea-118f6b5d8eed
-2025-08-31T09:00:04.911+08:00  INFO 5228 --- [02-rag-loader] [           main] com.example.ragloader.AIConfig           : Document loaded: contact.md
-2025-08-31T09:00:08.797+08:00  INFO 5228 --- [02-rag-loader] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-31T09:00:08.798+08:00  INFO 5228 --- [02-rag-loader] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-08-31T09:00:08.799+08:00  INFO 5228 --- [02-rag-loader] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-31T10:48:03.334+08:00  INFO 20048 --- [02-rag-loader] [           main] com.example.ragloader.Application        : Starting Application using Java 24.0.2 with PID 20048 (D:\code\java_code\OpenAISamples\02-rag-loader\target\02-rag-loader-0.0.1-SNAPSHOT.jar started by jagan in D:\code\java_code\OpenAISamples\02-rag-loader)
+2025-08-31T10:48:03.339+08:00  INFO 20048 --- [02-rag-loader] [           main] com.example.ragloader.Application        : No active profile set, falling back to 1 default profile: "default"
+2025-08-31T10:48:04.270+08:00  INFO 20048 --- [02-rag-loader] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-31T10:48:04.276+08:00  INFO 20048 --- [02-rag-loader] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-31T10:48:04.306+08:00  INFO 20048 --- [02-rag-loader] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2025-08-31T10:48:04.766+08:00  INFO 20048 --- [02-rag-loader] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-31T10:48:04.782+08:00  INFO 20048 --- [02-rag-loader] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-31T10:48:04.783+08:00  INFO 20048 --- [02-rag-loader] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-31T10:48:04.815+08:00  INFO 20048 --- [02-rag-loader] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-31T10:48:04.816+08:00  INFO 20048 --- [02-rag-loader] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1423 ms
+2025-08-31T10:48:06.580+08:00  INFO 20048 --- [02-rag-loader] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-31T10:48:06.636+08:00  INFO 20048 --- [02-rag-loader] [           main] com.example.ragloader.Application        : Started Application in 3.776 seconds (process running for 4.323)
+2025-08-31T10:48:06.640+08:00  INFO 20048 --- [02-rag-loader] [           main] com.example.ragloader.AIConfig           : Loading document: contact.md
+2025-08-31T10:48:08.933+08:00  INFO 20048 --- [02-rag-loader] [           main] o.s.ai.vectorstore.SimpleVectorStore     : Calling EmbeddingModel for document id = d32c8820-5336-4180-8241-be62f27bdfc3
+2025-08-31T10:48:10.147+08:00  INFO 20048 --- [02-rag-loader] [           main] o.s.ai.vectorstore.SimpleVectorStore     : Calling EmbeddingModel for document id = 98f6bc71-c9f4-4332-a0ad-c73408f0db2a
+2025-08-31T10:48:11.115+08:00  INFO 20048 --- [02-rag-loader] [           main] o.s.ai.vectorstore.SimpleVectorStore     : Calling EmbeddingModel for document id = 9406ed4d-89bd-4c44-81fc-ca7c379d5292
+2025-08-31T10:48:11.903+08:00  INFO 20048 --- [02-rag-loader] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-31T10:48:11.907+08:00  INFO 20048 --- [02-rag-loader] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-31T10:48:11.909+08:00  INFO 20048 --- [02-rag-loader] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-08-31T10:48:12.517+08:00  INFO 20048 --- [02-rag-loader] [           main] com.example.ragloader.AIConfig           : Document loaded: contact.md

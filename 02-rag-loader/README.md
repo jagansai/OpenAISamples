@@ -15,52 +15,21 @@ The implementation is intentionally simple and targeted for local development an
     - `QuestionAnswerAdvisor` (wired to the app's `VectorStore`) 
     - `SimpleLoggerAdvisor`
 - Spring AI `EmbeddingModel` — used to compute embeddings for documents and queries.
-- `VectorStore` (Spring AI abstraction) — the code provides an in-memory implementation instead of Redis.
+-- `VectorStore` (Spring AI abstraction) — this project provides a `SimpleVectorStore` bean (in-memory) via `AIConfig`.
 - Flexmark (flexmark-all) — converts Markdown produced by the LLM into HTML.
 - Jackson (via Spring Boot) — JSON serialization for API requests/responses.
 
-## 3. Implementation details of `InMemoryVectorStore`
+## 3. VectorStore (SimpleVectorStore)
 
-Location: `src/main/java/com/example/ragloader/InMemoryVectorStore.java`
+This module uses Spring AI's `SimpleVectorStore` (an in-memory VectorStore) which is created and exposed as a bean in `AIConfig`. That means:
 
-Key points:
+- No separate vector-store source file is required in this module — `SimpleVectorStore` is constructed using the application's `EmbeddingModel`.
+- Documents are split and accepted into the `VectorStore` at startup by the `ApplicationRunner` in `AIConfig`.
 
-- Purpose: a development/test fallback vector store that keeps documents and their embeddings in-memory.
+Notes:
 
-- Data structures:
-  - `List<Document> storage` — stores the Document objects (synchronized list for simple thread-safety).
-  - `List<float[]> embeddings` — parallel list holding each document's embedding vector (same index as `storage`).
-
-- Construction and dependencies:
-  - `EmbeddingModel` is constructor-injected. The store uses it to compute embeddings for Documents and query strings.
-
-- add(List<Document>):
-  - For each Document, attempts to compute an embedding:
-    - First tries `embeddingModel.embed(Document)`.
-    - If that fails and the Document has text, falls back to `embeddingModel.embed(String)`.
-  - If an embedding is computed, the Document and its embedding are appended to their respective lists.
-  - Errors while embedding a document are logged and that document is skipped.
-
-- similaritySearch(SearchRequest):
-  - Embeds the incoming query string using `EmbeddingModel`.
-  - Computes cosine similarity between the query embedding and each stored embedding.
-  - Applies `SearchRequest.getSimilarityThreshold()` and `getTopK()` to filter and rank results.
-  - Returns a list of matching `Document` objects sorted by similarity.
-
-- delete(List<String> ids) and delete(Filter.Expression):
-  - `delete(List<String>)` removes documents (and their embeddings) whose `Document.getId()` matches any id in the list.
-  - `delete(Expression)` is a no-op (logged) in this simple implementation.
-
-- snapshot():
-  - Returns a shallow copy of the stored `Document` list for debugging/tests.
-
-- Thread-safety and limitations:
-  - The implementation uses `Collections.synchronizedList(...)` for simple concurrency protection. This is not optimized for high-throughput or large datasets.
-  - All embeddings are kept in memory; not suitable for production or large corpora.
-  - Similarity is computed with a straightforward O(N) cosine similarity scan.
-
-- Logging:
-  - The class logs embedding failures and counts of stored documents.
+- `SimpleVectorStore` is suitable for local development and small datasets. It keeps embeddings in memory and performs an O(N) similarity scan.
+- For larger datasets or production, replace the bean with a persistent VectorStore (e.g., Redis/RediSearch or an ANN service).
 
 ## 4. API(s) exposed by this module
 
